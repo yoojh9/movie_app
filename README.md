@@ -19,10 +19,40 @@
 
 <br>
 
-
 ## 2.state
 - state는 리액트 컴포넌트 내에 있는 object이다
 - state가 바뀔 때 마다 render가 발생한다.
+
+<br>
+
+## 3. smart component vs dumb component
+- 모든 컴포넌트가 state가 있는 것은 아니다. 어떤 컴포넌트는 stateless functional 컴포넌트이기도 하다.
+- smart component는 state가 있고, dumb component는 state가 없고 props만 가지고 있다.
+- class 컴포넌트를 쓰는 대신 functional stateless component로 작성하면 dumb component가 된다.
+- dumb component는 componentWillMound(), componentDidMount(), render, update state가 필요 없을 경우 사용한다.
+- dumb component는 html을 return만 한다. 하지만 state를 잃게 됨으로써, update와 같은 기능이 사라지게 된다.
+
+
+```
+class MoviePoster extends Component {
+  static propTypes = {
+    poster: PropTypes.string.isRequired
+  }
+
+  render(){
+    return (
+      <img src={this.props.poster} alt="Movie Poster"/>
+      )
+  }
+}
+
+ // 위와 같은 역할의 dumb 컴포넌트 (return을 위한 컴포넌트)
+ function MoviePoster({poster}){
+   return(
+     <img src={poster} alt="Movie Poster"/>
+     )
+ }
+```
 
 <br><br>
 ---
