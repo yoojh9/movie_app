@@ -1,11 +1,25 @@
 # 리액트로 만들어본 movie_app
 - 노마드 코더 ReactJS로 웹서비스 만들기 강의를 따라해봄
 
+## Component Life Cycle
+- 자동으로 다음과 같은 Life Cycle이 일어난다
+- Render: componentWillMount() -> render() -> componentDidMount()
+- Update: componentWillReceiveProps() -> shouldComponentUpdate() -> componentWillUpdate() -> render() -> componentDidUpdate()
+
+### componentWillMount()
+- 만약 영화 앱을 만든다면 영화 api 호출은 여기서 담당
+
+### componentWillReceiveProps()
+- 컴포넌트가 새로운 props를 받았을 경우 발생
+
+### shouldComponentUpdate()
+- 이전 props와 현재 props가 다를 경우 shouldComponentUpdate()==true가 되어 componentWillMount() update가 발생한다
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
+
+## Available Scripts
 In the project directory, you can run:
 
 ### `npm start`

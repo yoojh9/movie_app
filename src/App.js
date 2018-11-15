@@ -18,11 +18,22 @@ const movies = [
 ]
 
 class App extends Component {
+  componentWillMount(){
+    // 만약 영화 앱을 만든다면 willMount()를 진행할 때 영화 api를 호출한다.
+    console.log('will mount')
+  }
+
+  componentDidMount() {
+    console.log('did mount')
+  }
+
   render() {
+    console.log('render')
     return (
       <div className="App">
-        {movies.map(movie=>{
-          return <Movie title={movie.title} poster={movie.poster}/>
+        {movies.map((movie, index)=>{
+          // 리액트는 array 엘리먼트일 경우 unique key를 줘야함
+          return <Movie title={movie.title} poster={movie.poster} key={index}/>
         })}
       </div>
     );
