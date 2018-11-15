@@ -3,7 +3,7 @@
 
 <br>
 
-## Component Life Cycle
+## 1. Component Life Cycle
 - 자동으로 다음과 같은 Life Cycle이 일어난다
 - Render: componentWillMount() -> render() -> componentDidMount()
 - Update: componentWillReceiveProps() -> shouldComponentUpdate() -> componentWillUpdate() -> render() -> componentDidUpdate()
@@ -20,7 +20,7 @@
 <br>
 
 
-## state
+## 2.state
 - state는 리액트 컴포넌트 내에 있는 object이다
 - state가 바뀔 때 마다 render가 발생한다.
 
