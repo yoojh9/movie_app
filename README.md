@@ -15,6 +15,11 @@
 ### shouldComponentUpdate()
 - 이전 props와 현재 props가 다를 경우 shouldComponentUpdate()==true가 되어 componentWillMount() update가 발생한다
 
+
+## state
+- state는 리액트 컴포넌트 내에 있는 object이다
+- state가 바뀔 때 마다 render가 발생한다.
+
 <br><br>
 ---
 
