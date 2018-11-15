@@ -30,8 +30,7 @@
 - smart component는 state가 있고, dumb component는 state가 없고 props만 가지고 있다.
 - class 컴포넌트를 쓰는 대신 functional stateless component로 작성하면 dumb component가 된다.
 - dumb component는 componentWillMound(), componentDidMount(), render, update state가 필요 없을 경우 사용한다.
-- dumb component는 html을 return만 한다. 하지만 state를 잃게 됨으로써, update와 같은 기능이 사라지게 된다.
-
+- dumb component는 html을 return만 한다. 하지만 state를 잃게 됨으로써, update와 같은 기능이 사라지게 된다.  
 
 ```
 class MoviePoster extends Component {
@@ -52,7 +51,21 @@ class MoviePoster extends Component {
      <img src={poster} alt="Movie Poster"/>
      )
  }
+```  
+
+<br>
+
+## 4. Promise
+- 첫번째 라인이 끝나든 말든 두번쨰 라인을 진행하겠다는 컨셉
+- 다른 작업의 수행 여부와 상관없이 진행된다.
+- 비동기 작업이 종료된 이후의 결과값이나 실패 이유를 처리하기 위해 사용한다.
+
 ```
+fetch(url)
+ .then( response => console.log(response))
+ .catch(err => console.log(err))
+```
+
 
 <br><br>
 ---

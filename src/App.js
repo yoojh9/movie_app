@@ -5,16 +5,20 @@ import Movie from './Movie';
 class App extends Component {
 
   state = {}
-  
+
   // 만약 영화 앱을 만든다면 willMount()를 진행할 때 영화 api를 호출한다.
   componentWillMount(){
     console.log('will mount')
+
   }
 
 
   // 컴포넌트가 마운트 되면 5초 기다리고 state를 업데이트 하겠다.
   componentDidMount() {
     fetch('https://yts.am/api/v2/list_movies.json?sort_by=rating')
+    .then( response => response.json() )
+    .then( json => console.log(json) )
+    .catch( err => console.log(err) )
   }
 
   // 리액트는 자체 기능이 많기 때문에 직접 만든 function과 차이점을 두기 위해 언더스코어를 사용
