@@ -1,6 +1,7 @@
 # 리액트로 만들어본 movie_app
 - 노마드 코더 ReactJS로 웹서비스 만들기 강의를 따라해봄
 
+<br>
 
 ## Component Life Cycle
 - 자동으로 다음과 같은 Life Cycle이 일어난다
@@ -16,6 +17,7 @@
 ### shouldComponentUpdate()
 - 이전 props와 현재 props가 다를 경우 shouldComponentUpdate()==true가 되어 componentWillMount() update가 발생한다
 
+<br>
 
 
 ## state
