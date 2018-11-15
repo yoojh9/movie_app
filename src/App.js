@@ -40,6 +40,7 @@ class App extends Component {
     },2000)
   }
 
+  // 리액트는 자체 기능이 많기 때문에 직접 만든 function과 차이점을 두기 위해 언더스코어를 사용
   _renderMovies = () => {
     const movies = this.state.movies.map((movie, index)=>{
       // 리액트는 array 엘리먼트일 경우 unique key를 줘야함
