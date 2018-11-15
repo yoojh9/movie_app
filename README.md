@@ -1,3 +1,7 @@
+# 리액트로 만들어본 movie_app
+- 노마드 코더 ReactJS로 웹서비스 만들기 강의를 따라해봄
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
