@@ -56,14 +56,36 @@ class MoviePoster extends Component {
 <br>
 
 ## 4. Promise
-- 첫번째 라인이 끝나든 말든 두번쨰 라인을 진행하겠다는 컨셉
-- 다른 작업의 수행 여부와 상관없이 진행된다.
 - 비동기 작업이 종료된 이후의 결과값이나 실패 이유를 처리하기 위해 사용한다.
 
 ```
 fetch(url)
  .then( response => console.log(response))
  .catch(err => console.log(err))
+```
+
+<br>
+
+## 5. async, await
+- callback hell에 빠지지 않도록 도와줌.
+
+```
+// callback hell
+.then()
+ .then()
+  .then() ...
+```
+
+- await : 작업이 '끝나기를' 기다림. '성공적으로 수행'이 아님.
+- this.setState()는 callApi() 작업이 완료될 때 까지는 실행되지 않음.
+
+```
+async _getMovies = () => {
+  const moves = await this._callApi()
+  this.setState({
+    movies
+  })
+}
 ```
 
 

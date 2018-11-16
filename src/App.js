@@ -15,17 +15,29 @@ class App extends Component {
 
   // 컴포넌트가 마운트 되면 5초 기다리고 state를 업데이트 하겠다.
   componentDidMount() {
-    fetch('https://yts.am/api/v2/list_movies.json?sort_by=rating')
+    this._getMovies()
+  }
+
+
+   _getMovies = async () => {
+    const movies = await this._callApi()
+    this.setState({
+      movies
+    })
+  }
+
+  _callApi = () => {
+    return fetch('https://yts.am/api/v2/list_movies.json?sort_by=rating')
     .then( response => response.json() )
-    .then( json => console.log(json) )
+    .then( json => json.data.movies )
     .catch( err => console.log(err) )
   }
 
   // 리액트는 자체 기능이 많기 때문에 직접 만든 function과 차이점을 두기 위해 언더스코어를 사용
   _renderMovies = () => {
-    const movies = this.state.movies.map((movie, index)=>{
+    const movies = this.state.movies.map(movie => {
       // 리액트는 array 엘리먼트일 경우 unique key를 줘야함
-      return <Movie title={movie.title} poster={movie.poster} key={index}/>
+      return <Movie title={movie.title} poster={movie.large_cover_image} key={movie.id}/>
     })
     return movies
   }
