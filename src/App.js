@@ -27,7 +27,7 @@ class App extends Component {
   }
 
   _callApi = () => {
-    return fetch('https://yts.am/api/v2/list_movies.json?sort_by=like_count')
+    return fetch('https://yts.am/api/v2/list_movies.json?sort_by=download_count')
     .then( response => response.json() )
     .then( json => json.data.movies )
     .catch( err => console.log(err) )
@@ -35,6 +35,7 @@ class App extends Component {
 
   // 리액트는 자체 기능이 많기 때문에 직접 만든 function과 차이점을 두기 위해 언더스코어를 사용
   _renderMovies = () => {
+    console.log(this.state.movies)
     const movies = this.state.movies.map(movie => {
       // 리액트는 array 엘리먼트일 경우 unique key를 줘야함
       return <Movie
